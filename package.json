@@ -1,5 +1,5 @@
 {
-  "name": "hapiest-server",
+  "name": "foundry-hapi-server",
   "version": "0.1.0",
   "description": "A wrapper around Hapi.js with a configuration-first approach",
   "main": "index.js",
@@ -8,22 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jonathan-fulton/hapiest-server.git"
+    "url": "git+https://github.com/FoundryAI/foundry-hapi-server.git"
   },
   "keywords": [
     "hapi.js",
-    "hapiest",
+    "foundry-hapi",
     "HTTP",
     "server",
     "MVC",
     "framework"
   ],
-  "author": "Jonathan Fulton",
+  "author": "FoundryAI",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jonathan-fulton/hapiest-server/issues"
+    "url": "https://github.com/FoundryAI/foundry-hapi-server/issues"
   },
-  "homepage": "https://github.com/jonathan-fulton/hapiest-server#readme",
+  "homepage": "https://github.com/FoundryAI/foundry-hapi-server#readme",
   "dependencies": {
     "async": "^2.0.0-rc.4",
     "blipp": "^2.3.0",
@@ -34,8 +34,8 @@
     "hapi": "^13.4.0",
     "hapi-router": "^3.5.0",
     "hapi-to": "^1.0.0",
-    "hapiest-logger": "^0.1.1",
-    "hapiest-vo": "^0.0.4",
+    "foundry-logger": "^0.1.1",
+    "foundry-vo": "^0.0.4",
     "inert": "^4.0.0",
     "joi": "^8.1.0",
     "lout": "^9.0.0",
