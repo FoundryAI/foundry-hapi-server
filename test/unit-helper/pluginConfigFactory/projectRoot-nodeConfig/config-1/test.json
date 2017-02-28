@@ -1,0 +1,10 @@
+{
+  "server": {
+    "plugins": {
+      "good": {
+        "enabled": true,
+        "opsInterval": 5000
+      }
+    }
+  }
+}
