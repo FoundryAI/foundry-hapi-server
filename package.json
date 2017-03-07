@@ -28,16 +28,16 @@
     "async": "^2.0.0-rc.4",
     "blipp": "^2.3.0",
     "config": "^1.20.1",
-    "fs": "0.0.2",
-    "good": "^6.6.3",
-    "good-winston": "^1.0.0",
-    "hapi": "^13.4.0",
     "foundry-vo": "^0.0.6",
+    "good": "^7.1.0",
+    "good-squeeze": "^5.0.1",
+    "good-winston": "^3.0.0",
+    "hapi": "^16.1.0",
     "hapi-router": "^3.5.0",
     "hapi-to": "^1.0.0",
     "hapiest-logger": "^0.1.1",
     "inert": "^4.0.0",
-    "joi": "^8.1.0",
+    "joi": "^10.2.2",
     "lout": "^9.0.0",
     "path": "^0.12.7",
     "poop": "^2.0.0",
@@ -47,6 +47,7 @@
   "devDependencies": {
     "config-uncached": "^1.0.2",
     "events": "^1.1.0",
-    "should": "^8.3.1"
+    "mocha": "^3.2.0",
+    "should": "^11.2.0"
   }
 }

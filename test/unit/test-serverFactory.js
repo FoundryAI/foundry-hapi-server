@@ -2,7 +2,7 @@
 
 const Should = require('should');
 const Async = require('async');
-const EventEmitter = require('events');
+const Server = require('hapi').Server;
 const Path = require('path');
 const NodeConfig = require('config-uncached'); // Need config-uncached so we can reload the config files
 
@@ -27,9 +27,9 @@ const serverDependencies = ServerDependenciesFactory.createDependencies(projectR
 const beforeRoutingPlugins = [];
 
 describe('ServerFactory', function() {
-    
+
     describe('createServer', function() {
-       
+
         it('should return a Hapi server object with one connection at http://localhost:30000', function(done) {
             const config = getBasicHttpServerConfig();
             Async.auto({
@@ -40,7 +40,7 @@ describe('ServerFactory', function() {
                 try {
                     const server = result.server;
 
-                    (server).should.be.an.instanceOf(EventEmitter);
+                    (server).should.be.an.instanceOf(Server);
                     (server).should.have.property('connections');
                     (server.connections.length).should.eql(1);
 
@@ -51,6 +51,7 @@ describe('ServerFactory', function() {
                     (server.info.uri).should.eql('http://localhost:30000');
                     return done();
                 } catch (e) {
+                    console.log(e);
                     return done(e);
                 }
             });
@@ -68,12 +69,11 @@ describe('ServerFactory', function() {
                 try {
                     const server = result.server;
 
-                    (server).should.be.an.instanceOf(EventEmitter);
+                    (server).should.be.an.instanceOf(Server);
                     (server).should.have.property('connections');
                     (server.connections.length).should.eql(2);
 
                     const coreServer = server.select('core');
-                    (coreServer).should.be.an.instanceOf(EventEmitter);
                     (coreServer).should.have.property('connections');
                     (coreServer.connections.length).should.eql(1);
                     (coreServer.connections[0]).should.have.property('info');
@@ -83,7 +83,6 @@ describe('ServerFactory', function() {
                     (coreServer.connections[0].info.uri).should.eql('https://localhost:30000');
 
                     const redirectServer = server.select('redirect');
-                    (redirectServer).should.be.an.instanceOf(EventEmitter);
                     (redirectServer).should.have.property('connections');
                     (redirectServer.connections.length).should.eql(1);
                     (redirectServer.connections[0]).should.have.property('info');
@@ -130,7 +129,7 @@ describe('ServerFactory', function() {
 
                     const server = result.server;
 
-                    (server).should.be.an.instanceOf(EventEmitter);
+                    (server).should.be.an.instanceOf(Server);
                     (server).should.have.property('connections');
                     (server.connections.length).should.eql(1);
 
@@ -160,7 +159,7 @@ describe('ServerFactory', function() {
                 }
             });
         });
-        
+
     });
 
     describe('createServerFromNodeConfig', function() {
@@ -176,7 +175,7 @@ describe('ServerFactory', function() {
                 if (err) { return done(err); }
 
                 try {
-                    (server).should.be.an.instanceOf(EventEmitter);
+                    (server).should.be.an.instanceOf(Server);
                     (server).should.have.property('connections');
                     (server.connections.length).should.eql(1);
 
@@ -204,12 +203,11 @@ describe('ServerFactory', function() {
                 if(err) { done(err); }
 
                 try {
-                    (server).should.be.an.instanceOf(EventEmitter);
+                    (server).should.be.an.instanceOf(Server);
                     (server).should.have.property('connections');
                     (server.connections.length).should.eql(2);
 
                     const coreServer = server.select('core');
-                    (coreServer).should.be.an.instanceOf(EventEmitter);
                     (coreServer).should.have.property('connections');
                     (coreServer.connections.length).should.eql(1);
                     (coreServer.connections[0]).should.have.property('info');
@@ -219,7 +217,6 @@ describe('ServerFactory', function() {
                     (coreServer.connections[0].info.uri).should.eql('https://localhost:3004');
 
                     const redirectServer = server.select('redirect');
-                    (redirectServer).should.be.an.instanceOf(EventEmitter);
                     (redirectServer).should.have.property('connections');
                     (redirectServer.connections.length).should.eql(1);
                     (redirectServer.connections[0]).should.have.property('info');
@@ -237,7 +234,7 @@ describe('ServerFactory', function() {
         });
 
     });
-    
+
 });
 
 /**
