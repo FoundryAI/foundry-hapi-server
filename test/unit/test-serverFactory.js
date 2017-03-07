@@ -6,8 +6,8 @@ const EventEmitter = require('events');
 const Path = require('path');
 const NodeConfig = require('config-uncached'); // Need config-uncached so we can reload the config files
 
-const LoggerConfigFactory = require('foundry-logger/lib/loggerConfigFactory');
-const LoggerFactory = require('foundry-logger/lib/loggerFactory');
+const LoggerConfigFactory = require('hapiest-logger/lib/loggerConfigFactory');
+const LoggerFactory = require('hapiest-logger/lib/loggerFactory');
 const loggerConfig = LoggerConfigFactory.createFromJsObj({
     enabled: false,
     consoleTransport: {
