@@ -1,6 +1,6 @@
 {
   "name": "foundry-hapi-server",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A wrapper around Hapi.js with a configuration-first approach",
   "main": "index.js",
   "scripts": {
