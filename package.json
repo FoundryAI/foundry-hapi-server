@@ -1,6 +1,6 @@
 {
   "name": "foundry-hapi-server",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A wrapper around Hapi.js with a configuration-first approach",
   "main": "index.js",
   "scripts": {
@@ -25,28 +25,30 @@
   },
   "homepage": "https://github.com/FoundryAI/foundry-hapi-server#readme",
   "dependencies": {
-    "async": "^2.0.0-rc.4",
+    "async": "^2.5.0",
     "blipp": "^2.3.0",
     "config": "^1.20.1",
-    "fs": "0.0.2",
-    "good": "^6.6.3",
-    "good-winston": "^1.0.0",
-    "hapi": "^13.4.0",
+    "foundry-vo": "^0.0.6",
+    "good": "^7.1.0",
+    "good-squeeze": "^5.0.1",
+    "good-winston": "^4.0.0",
+    "hapi": "^16.4.3",
     "hapi-router": "^3.5.0",
     "hapi-to": "^1.0.0",
-    "foundry-logger": "^0.1.1",
-    "foundry-vo": "^0.0.4",
+    "hapiest-logger": "^0.1.1",
     "inert": "^4.0.0",
-    "joi": "^8.1.0",
-    "lout": "^9.0.0",
+    "joi": "^10.6.0",
+    "lout": "^10.0.0",
     "path": "^0.12.7",
     "poop": "^2.0.0",
     "url": "^0.11.0",
-    "vision": "^4.1.0"
+    "vision": "^4.1.0",
+    "white-out": "^2.0.0"
   },
   "devDependencies": {
     "config-uncached": "^1.0.2",
     "events": "^1.1.0",
-    "should": "^8.3.1"
+    "mocha": "^3.2.0",
+    "should": "^11.2.0"
   }
 }
